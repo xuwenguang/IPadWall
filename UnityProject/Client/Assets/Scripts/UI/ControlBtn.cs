@@ -12,7 +12,7 @@ public class ControlBtn : MonoBehaviour
 		//CurrentKeyCode = keyCode;
 		VideoSetup.Instance.LocateCamera(keyCode);
 		Debug.Log (keyCode);
-		transform.parent.parent.gameObject.SetActive(false);
+		transform.parent.gameObject.SetActive(false);
 	}
 
 }
