@@ -59,6 +59,7 @@ public class FlurryEventListener : MonoBehaviour
 		Debug.Log( "spaceDidFailToReceiveAdEvent: " + space );
 	}
 #endif
+
 }
 
 

@@ -50,7 +50,8 @@ public class VideoSetup : MonoBehaviour {
 		//play video
 		_videoPlane.localScale = _videoSizes[groupID / 2];
 		VideoTexture videoTextureScript = _videoPlane.GetComponent<VideoTexture>();
-		videoTextureScript.jumpToVideo(videoIndex * 5 + groupID);
+		videoTextureScript.jumpToVideo((videoIndex * 5 + groupID) * 2);
+		Debug.Log(videoTextureScript.CurrentlyPlayingIndex);
 	}
 
 	//example: 
