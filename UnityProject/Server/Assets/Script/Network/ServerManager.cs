@@ -23,12 +23,13 @@ public class ServerManager : MonoBehaviour {
 		GameObject[] objs = GameObject.FindGameObjectsWithTag("Client");
 		for (int i = 0; i < objs.Length; i++) {
 			clients.Add (objs[i].name, objs[i]);
+			objs[i].GetComponent<UIButton>().isEnabled = false;
 		}
 	}
 
 	public void PlayVideo (int index) {
 		videoIndex = index;
-		VideoControl.Instance.ChangeVideo(index, "-1");
+		networkView.RPC("ChangeVideo", RPCMode.Others, index, "-1");
 //		clients = GameObject.FindGameObjectsWithTag("Client");
 //		for (int i = 0; i < clients.Length; i++) {
 //			clients[i].SendMessage("ControlVideos", videosName[videoIndex]);
@@ -36,7 +37,7 @@ public class ServerManager : MonoBehaviour {
 		Debug.Log ("Changing Video to: " + videoIndex);
 	}
 
-	public void ChangeVideo (int index) {
+	public void VideoChanged (int index) {
 		if(Time.time - _changeVideoLastTime > _changeVideoCooldownTime) {
 			PlayVideo(index);
 			_changeVideoLastTime = Time.time;

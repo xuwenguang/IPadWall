@@ -10,9 +10,11 @@ public class ControlBtn : MonoBehaviour
 	public void BtnClicked()
 	{
 		//CurrentKeyCode = keyCode;
+		ClientManager.clientID = keyCode;
 		VideoSetup.Instance.LocateCamera(keyCode);
 		Debug.Log (keyCode);
-		transform.parent.gameObject.SetActive(false);
+		NetworkManager.Instance.ConnectToServer();
+		//transform.parent.gameObject.SetActive(false);
 	}
 
 }

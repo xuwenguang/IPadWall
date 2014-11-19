@@ -359,6 +359,7 @@ GameObject:
   - 64: {fileID: 155981769}
   - 23: {fileID: 155981768}
   - 114: {fileID: 155981772}
+  - 114: {fileID: 155981773}
   m_Layer: 0
   m_Name: VideoPlane
   m_TagString: Untagged
@@ -459,8 +460,29 @@ MonoBehaviour:
   - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_2.m4v
   - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_3.m4v
   - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_3.m4v
-  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/E1.m4v
-  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/E1.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_4.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_4.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_0.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_0.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_1.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_1.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_2.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_2.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_3.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_3.m4v
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_4.mp4
+  - /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_4.mp4
+--- !u!114 &155981773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155981767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9d7b299d1564542ae2651620f702e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &163707394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1718,169 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &679705023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 679705025}
+  - 148: {fileID: 679705024}
+  - 114: {fileID: 679705028}
+  - 114: {fileID: 679705027}
+  - 114: {fileID: 679705026}
+  - 114: {fileID: 679705029}
+  - 82: {fileID: 679705030}
+  m_Layer: 0
+  m_Name: ClientManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!148 &679705024
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: c4c452dcd93cd4e7c8c57abb23579773,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 679705025}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
+--- !u!4 &679705025
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  m_GameObject: {fileID: 679705023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+--- !u!114 &679705026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b213ce89bb834475ac9d6d86b459ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 1075808138}
+  _videoSizes:
+  - {x: 20, y: 6, z: 1}
+  - {x: 8, y: 9, z: 1}
+  - {x: 4, y: 3, z: 1}
+--- !u!114 &679705027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: c4c452dcd93cd4e7c8c57abb23579773,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5bec028f2cb4a9c9aeb95b1ff4977a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &679705028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980640236}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d971de0e2a36a473d82b3396f3997b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsRoot: {fileID: 127481897}
+  videoPlane: {fileID: 155981771}
+  audioClips:
+  - {fileID: 8300000, guid: fbb480e17849d46c29e6c6128f69e431, type: 3}
+  - {fileID: 8300000, guid: d9d639ee2a6484fb494771fa7f610fa3, type: 3}
+  _curVideo: 0
+  clientState: 0
+--- !u!114 &679705029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7968cc335544982a26fffaa7b267ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &679705030
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679705023}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &706433557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,52 +2907,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!1 &908512655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-  m_PrefabInternal: {fileID: 1309360186}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 908512657}
-  - 114: {fileID: 908512656}
-  m_Layer: 0
-  m_Name: VideoSetup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &908512656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1309360186}
-  m_GameObject: {fileID: 908512655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b213ce89bb834475ac9d6d86b459ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 1075808138}
-  _videoPlane: {fileID: 155981771}
-  _videoSizes:
-  - {x: 20, y: 6, z: 1}
-  - {x: 8, y: 9, z: 1}
-  - {x: 4, y: 3, z: 1}
---- !u!4 &908512657
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-  m_PrefabInternal: {fileID: 1309360186}
-  m_GameObject: {fileID: 908512655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
 --- !u!1 &930082531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,122 +4329,6 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!1001 &1309360186
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoPlane.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_RootMapOrder
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 1075808138}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoPlane.Array.data[0]
-      value: 
-      objectReference: {fileID: 185648974}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoPlane.Array.data[1]
-      value: 
-      objectReference: {fileID: 1140306589}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _centreVideoPlane
-      value: 
-      objectReference: {fileID: 245626365}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoPlane.Array.data[2]
-      value: 
-      objectReference: {fileID: 245626365}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[0].x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[0].y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[0].z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[1].z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[2].z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[1].x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[1].y
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[2].x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoSizes.Array.data[2].y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-      propertyPath: _videoPlane
-      value: 
-      objectReference: {fileID: 155981771}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7f0ee623842714b738ab3d27b5d702b3, type: 2}
-  m_RootGameObject: {fileID: 908512655}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1338361149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,6 +5017,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.size
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5029,6 +5056,54 @@ Prefab:
     - target: {fileID: 400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[10]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_0.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[11]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_0.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[12]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_1.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[13]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_1.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[14]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_2.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[15]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_2.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[16]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_3.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[17]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_3.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[18]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_4.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[19]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/1_4.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[8]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_4.m4v
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7716914f28381432e8c2929956015f44, type: 2}
+      propertyPath: videoPaths.Array.data[9]
+      value: /Users/nick_zhao/Documents/Unity/Yangos/iPadWallForEnvironmentDay/UnityCode/IPadWall/UnityProject/Client/Assets/StreamingAssets/0_4.m4v
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7716914f28381432e8c2929956015f44, type: 2}
@@ -6646,6 +6721,134 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1001 &1980640236
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_RootMapOrder
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1075808138}
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: buttonsRoot
+      value: 
+      objectReference: {fileID: 127481897}
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoPlane
+      value: 
+      objectReference: {fileID: 155981771}
+    - target: {fileID: 14800000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[0].x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[0].y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[0].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[1].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[1].y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[1].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[2].x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[2].y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: _videoSizes.Array.data[2].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: videoPlane
+      value: 
+      objectReference: {fileID: 155981771}
+    - target: {fileID: 14800000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: m_StateSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d9d639ee2a6484fb494771fa7f610fa3, type: 3}
+    - target: {fileID: 11400004, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fbb480e17849d46c29e6c6128f69e431, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c4c452dcd93cd4e7c8c57abb23579773, type: 2}
+  m_RootGameObject: {fileID: 679705023}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &2001939032
 GameObject:
   m_ObjectHideFlags: 0

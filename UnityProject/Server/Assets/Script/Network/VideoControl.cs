@@ -8,17 +8,14 @@ public class VideoControl : MonoBehaviour {
 		if (Instance == null)
 			Instance = this;
 	}
-	[RPC]
-	void ChangeVideoHandler (int index) {
-		ServerManager.Instance.ChangeVideo(index);
-	}
 
-	public void ChangeVideo (int index, string id) {
-		networkView.RPC("ChangeVideoToClientHandler", RPCMode.Others, index, id);
+	[RPC]
+	void OnVideoChange (int index) {
+		ServerManager.Instance.VideoChanged(index);
 	}
 
 	[RPC]
-	void ChangeVideoToClientHandler (int index, string id) {
+	void ChangeVideo (int index, string id) {
 
 	}
 

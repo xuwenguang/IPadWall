@@ -384,7 +384,7 @@ public class VideoTexture : MonoBehaviour  {
 		else if(loopType == VideoLoopType.LOOP_VIDEO || loopType == VideoLoopType.LOOP_QUEUE && videoPaths.Length == 1){
 //			Debug.Log ( " LOOP_VIDEO complete. Looping: " + videoPaths[currentlyPlayingIndex]);
 		}
-		
+
 		gameObject.SendMessage("VideoPlaybackEnded", SendMessageOptions.DontRequireReceiver);
 	}
 	

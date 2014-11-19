@@ -21,12 +21,7 @@ public class ServerSetup : MonoBehaviour {
 	void AddClient (string id) {
 		Debug.Log ("Server: Add Client " + id);
 		UpdateClient(id, true);
-		//_clientCount ++;
 		ServerManager.Instance.PlayVideo(0);
-		//if(_clientCount == 1) {
-		//	PlayVideo(0);
-		//}
-		//clients.Add(client);
 	}
 
 	[RPC]
@@ -35,16 +30,7 @@ public class ServerSetup : MonoBehaviour {
 	}
 	
 	void UpdateClient (string id, bool state) {
-		//GameObject client = GameObject.Find(id);
+		Debug.Log (id);
 		ServerManager.clients[id].GetComponent<UIButton>().isEnabled = state;
-		//		NetworkView nView;
-		//		nView = client.GetComponent<NetworkView>();
-		//		nView.viewID = viewID;
 	}
-	
-//	void OnPlayerDisconnected(NetworkPlayer player) {
-//		Debug.Log("Clean up after desconnected " + player);
-//		Network.RemoveRPCs(player);
-//		Network.DestroyPlayerObjects(player);
-//	}
 }
