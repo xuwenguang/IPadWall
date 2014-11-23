@@ -14,7 +14,7 @@ public class ControlBtn : MonoBehaviour
 		VideoSetup.Instance.LocateCamera(keyCode);
 		Debug.Log (keyCode);
 		NetworkManager.Instance.ConnectToServer();
-		//transform.parent.gameObject.SetActive(false);
+		transform.parent.gameObject.SetActive(false);
 	}
 
 }

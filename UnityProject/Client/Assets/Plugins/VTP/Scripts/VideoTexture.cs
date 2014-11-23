@@ -391,8 +391,8 @@ public class VideoTexture : MonoBehaviour  {
 	public void jumpToVideo(int i ){
 		//force play mode if paused
 		isPaused = false;
-		Debug.Log ("jumping to " + i);
 		jumpToQueueIndex(VideoInstance, i);
+		Debug.Log ("jumping to " + i);
 	}
 
 	public void CopyVideoPixels(){

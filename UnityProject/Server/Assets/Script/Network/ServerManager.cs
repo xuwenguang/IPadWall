@@ -3,6 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
+//	0 - idle
+//	1 - intro
+//	2 - power
+//	3 - water
+//	4 - waste
+//	5 - innovation
+//	6 - thanks
+//	7 - please look at controller
+
 public class ServerManager : MonoBehaviour {
 	public	static	ServerManager		Instance;
 	public	static	Dictionary<string, GameObject>	clients = new Dictionary<string, GameObject>();
@@ -39,8 +48,26 @@ public class ServerManager : MonoBehaviour {
 
 	public void VideoChanged (int index) {
 		if(Time.time - _changeVideoLastTime > _changeVideoCooldownTime) {
+			index = CheckNextVideoIndex(index);
 			PlayVideo(index);
 			_changeVideoLastTime = Time.time;
 		}
+	}
+
+	int CheckNextVideoIndex (int index) {
+		if(index == 0 || index == 7) {
+			//after idle || please lood at controller
+			return index;
+		} else if (index == 1) {
+			//after intro
+			return 7;
+		} else if (index == 2 || index == 3 || index == 4 || index == 5) {
+			//after 4 main video
+			return 7;
+		} else if (index == 6) {
+			//after thanks video
+			return 0;
+		}
+		return 0;
 	}
 }

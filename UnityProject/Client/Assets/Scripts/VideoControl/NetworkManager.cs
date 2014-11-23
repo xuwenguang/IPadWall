@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
 	public	static	NetworkManager	Instance;
+	public	static	string			IPAddress = "";
 	
 	void Awake()
 	{
@@ -11,7 +12,6 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	public void ConnectToServer () {
-		string IPAddress = "127.0.0.1";
 		Debug.Log("Connecting : " + IPAddress);
 		PlayerPrefs.SetString("IPAddress", IPAddress);
 //		Network.useNat = false;
