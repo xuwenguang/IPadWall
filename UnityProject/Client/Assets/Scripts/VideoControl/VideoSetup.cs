@@ -45,7 +45,7 @@ public class VideoSetup : MonoBehaviour {
 
 	void SetupVideoPlane (int index) {
 		ClientManager.Instance.videoPlane.localScale = _videoSizes[ClientManager.groupID / 2];
-		ClientManager.Instance.PlayVideo(0);
+//		ClientManager.Instance.PlayVideo(0);
 	}
 
 	//example: 

@@ -61,9 +61,11 @@ public class ServerManager : MonoBehaviour {
 		} else if (index == 1) {
 			//after intro
 			return 7;
-		} else if (index == 2 || index == 3 || index == 4 || index == 5) {
+		} else if (index == 2 || index == 3 || index == 4) {
 			//after 4 main video
 			return 7;
+		} else if (index == 5) {
+			return 6;
 		} else if (index == 6) {
 			//after thanks video
 			return 0;

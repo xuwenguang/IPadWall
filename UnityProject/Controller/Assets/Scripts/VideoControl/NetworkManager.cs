@@ -11,11 +11,11 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 	void Start () {
-		ConnectToServer();
+		//ConnectToServer();
 	}
 
-	public void ConnectToServer () {
-		string IPAddress = "127.0.0.1";
+	public void ConnectToServer (string IPAddress="127.0.0.1") 
+	{
 		Debug.Log("Connecting : " + IPAddress);
 		PlayerPrefs.SetString("IPAddress", IPAddress);
 //		Network.useNat = false;

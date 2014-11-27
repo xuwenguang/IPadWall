@@ -234,7 +234,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: 127.0.0.1
+  mText: 192.168.1.
   mFontSize: 26
   mFontStyle: 0
   mAlignment: 0
@@ -480,6 +480,14 @@ Prefab:
     - target: {fileID: 400086, guid: 15d6d62162b584ce6810599f2e52b618, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400220, guid: 15d6d62162b584ce6810599f2e52b618, type: 2}
+      propertyPath: mText
+      value: 192.168.1.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400218, guid: 15d6d62162b584ce6810599f2e52b618, type: 2}
+      propertyPath: mValue
+      value: 192.168.1.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15d6d62162b584ce6810599f2e52b618, type: 2}
@@ -1974,7 +1982,7 @@ MonoBehaviour:
   selectionColor: {r: 1, g: .874509811, b: .552941203, a: .5}
   onSubmit: []
   onChange: []
-  mValue: 127.0.0.1
+  mValue: 192.168.1.
 --- !u!65 &660325168
 BoxCollider:
   m_ObjectHideFlags: 0

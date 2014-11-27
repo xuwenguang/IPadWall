@@ -26,10 +26,11 @@ public class ControllerManager : MonoBehaviour {
 	}
 	
 	// Use this for initialization
-	void Start () {
-		Screen.autorotateToLandscapeRight = true;
-		Screen.autorotateToLandscapeLeft = true;
-		Screen.orientation = ScreenOrientation.AutoRotation;
+	void Start () 
+	{//ControllerManager
+//		Screen.autorotateToLandscapeRight = true;
+//		Screen.autorotateToLandscapeLeft = true;
+//		Screen.orientation = ScreenOrientation.AutoRotation;
 	}
 	
 	// Update is called once per frame
@@ -53,6 +54,33 @@ public class ControllerManager : MonoBehaviour {
 		if(Time.time - _changeVideoLastTime > _changeVideoCooldownTime) {
 			//TODO: 
 			//wenguang: Hide label
+			switch(index)
+			{
+			case 0:
+				break;
+			case 1:
+				//PlayVideo(7);
+				break;
+			case 2:
+				UIManager.Instance.VideoFinishCallBack();
+				break;
+			case 3:
+				UIManager.Instance.VideoFinishCallBack();
+				break;
+			case 4:
+				UIManager.Instance.VideoFinishCallBack();
+				break;
+			case 5:
+				//[Nick Change]  
+				//PlayVideo(6);
+				break;
+			case 6:
+				//thanks is finished, next time can play intro video again
+				UIManager.Instance.firstTimePlayIntro=true;
+				UIManager.Instance.VideoFinishCallBack();
+				break;
+			}
+
 			
 			_changeVideoLastTime = Time.time;
 		}
