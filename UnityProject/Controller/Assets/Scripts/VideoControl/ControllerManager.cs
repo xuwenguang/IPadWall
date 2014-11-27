@@ -6,6 +6,8 @@ public class ControllerManager : MonoBehaviour {
 	public	static	ControllerManager	Instance;
 	public	static	string			clientID = "Controller";
 	public	static	int				groupID;
+	public	static	bool			isFirstTime;
+	public	GameObject				lostConnectionButton;
 
 	[SerializeField]
 	private	int						_curVideo;

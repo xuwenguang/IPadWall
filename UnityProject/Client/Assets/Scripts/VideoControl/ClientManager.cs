@@ -6,9 +6,11 @@ public class ClientManager : MonoBehaviour {
 	public	static	ClientManager	Instance;
 	public	static	string			clientID = "";
 	public	static	int				groupID;
+	public	static	bool			isFirstTime = true;
 	public	GameObject				buttonsRoot;
 	public	Transform				videoPlane;
 	public	AudioClip[]				audioClips;
+	public	GameObject				lostConnectionButton;
 
 	[SerializeField]
 	private	int						_curVideo;

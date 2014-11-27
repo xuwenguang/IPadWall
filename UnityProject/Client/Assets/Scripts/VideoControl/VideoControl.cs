@@ -10,7 +10,7 @@ public class VideoControl : MonoBehaviour {
 	}
 	
 	[RPC]
-	void AddClient (string id) {
+	void AddClient (string id, bool isFirstTime) {
 		if(id == ClientManager.clientID) {
 			Debug.Log ("Client: Add client");
 		}

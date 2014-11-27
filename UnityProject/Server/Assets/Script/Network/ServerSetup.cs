@@ -18,10 +18,12 @@ public class ServerSetup : MonoBehaviour {
 	}
 	
 	[RPC]
-	void AddClient (string id) {
+	void AddClient (string id, bool isFirstTime) {
 		Debug.Log ("Server: Add Client " + id);
 		UpdateClient(id, true);
-		ServerManager.Instance.PlayVideo(0);
+		if(isFirstTime) {
+			ServerManager.Instance.PlayVideo(0);
+		}
 	}
 
 	[RPC]
