@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour {
 		categoryText = GameObject.Find ("CategoryText");
 //		categoryText.SetActive (false);
 		tapToStartText = GameObject.Find ("TapToStart");
+
+		TimeKeeper.timeCallBack += LongTimeNoInteraction;
 	}
 
 	void Start () {
@@ -45,8 +47,15 @@ public class UIManager : MonoBehaviour {
 			SwitchState (ControllerState.idleClicked);
 			PlayAnimationForCurrentState();
 
-		} else if (state == ControllerState.backToIdle) {
+		} 
+		else if (state == ControllerState.backToIdle) 
+		{
 			SwitchState (ControllerState.backToIdle);
+			PlayAnimationForCurrentState();
+		}
+		if(isIntroPlaying)
+		{
+			SwitchState(ControllerState.idleClicked);
 			PlayAnimationForCurrentState();
 		}
 	}
@@ -68,6 +77,34 @@ public class UIManager : MonoBehaviour {
 
 	}
 
+	IEnumerator _hideEveryThingToIdle()
+	{
+		for(int i=0;i<4;i++)
+		{
+			btnList[i].GetComponent<Animator>().SetTrigger("btnBackward");
+			yield return new WaitForSeconds (delayForEachBtn);
+			//btnList [i].GetComponent<Animator> ().SetBool ("playBtnAnimation",false);
+			btnList[i].GetComponent<Animator>().ResetTrigger("btnBackward");
+		}
+		GameObject.Find ("blackBar").GetComponent<Animator> ().SetTrigger ("hideBlackBar");
+		yield return new WaitForSeconds (0.2f);
+		GameObject.Find ("blackBar").GetComponent<Animator> ().SetTrigger ("setToDefault");
+		for(int i=0;i<4;i++)
+		{
+			btnList[i].GetComponent<Animator>().SetTrigger("setToDefault");
+			yield return new WaitForSeconds (delayForEachBtn);
+			//btnList [i].GetComponent<Animator> ().SetBool ("playBtnAnimation",false);
+		}
+		
+		yield return new WaitForSeconds (3f);
+		
+		//hide text for category
+		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
+		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
+	}
+
+
+
 	IEnumerator _hideButtomBtns()
 	{
 		for(int i=0;i<4;i++)
@@ -75,6 +112,7 @@ public class UIManager : MonoBehaviour {
 			btnList[i].GetComponent<Animator>().SetTrigger("btnBackward");
 			yield return new WaitForSeconds (delayForEachBtn);
 			//btnList [i].GetComponent<Animator> ().SetBool ("playBtnAnimation",false);
+			btnList[i].GetComponent<Animator>().ResetTrigger("btnBackward");
 		}
 		GameObject.Find ("blackBar").GetComponent<Animator> ().SetTrigger ("hideBlackBar");
 		yield return new WaitForSeconds (0.2f);
@@ -93,6 +131,9 @@ public class UIManager : MonoBehaviour {
 		WatchMainScreen ();
 //		yield return new WaitForSeconds (3f);
 //		VideoFinishCallBack ();
+
+		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
+
 	}
 
 	IEnumerator _showBlackBar(float waitTime)
@@ -170,20 +211,24 @@ public class UIManager : MonoBehaviour {
 
 
 	public bool firstTimePlayIntro=true;
+	public bool isIntroPlaying=false;
 	public void PlayAnimationForCurrentState()
 	{
+		midBtn.GetComponent<Animator> ().ResetTrigger ("backToIdle");
+		midBtn.GetComponent<Animator> ().ResetTrigger ("resetMidCat");
 		switch (state)
 		{
 		case ControllerState.idle:
 			//play idle animation
 			PlayIdleAnimation();
 			tapToStartText.SetActive(true);
-
+			TimeKeeper.Instance.UseTimeKeeper(false);
 			
 			ControllerManager.Instance.PlayVideo(0);
 			break;
 		case ControllerState.idleClicked:
 			//play waiting for selection animation
+
 			midBlack.GetComponent<Animator> ().SetBool ("watchMain",false);
 			midBlack.SetActive (false);
 			midBtn.GetComponent<Animator>().SetTrigger("resetMidCat");
@@ -196,6 +241,8 @@ public class UIManager : MonoBehaviour {
 			{
 				ControllerManager.Instance.PlayVideo(1);
 				firstTimePlayIntro=false;
+				TimeKeeper.Instance.UseTimeKeeper(false);
+				isIntroPlaying=true;
 			}
 //			else
 //			{
@@ -206,19 +253,35 @@ public class UIManager : MonoBehaviour {
 			//play animation based on which category selected
 			_playCategorySequence();
 			StartCoroutine(_hideButtomBtns());
-
+			TimeKeeper.Instance.UseTimeKeeper(false);
 
 			break;
 		case ControllerState.waiting:
 			//after category animation finished, play let user look at screen animation
 			break;
 		case ControllerState.backToIdle:
+
 			//play idle animation
 			PlayIdleAnimation();
 			tapToStartText.SetActive(true);
 			state = ControllerState.idle;
 			break;
 		}
+	}
+
+
+	public void LongTimeNoInteraction()
+	{
+		if(state!=ControllerState.idle)
+		{
+			Debug.Log ("calling 40 secs no touch event");
+			SwitchState (ControllerState.idle);
+			tapToStartText.SetActive (true);
+			midBlack.SetActive (false);
+			StartCoroutine(_hideEveryThingToIdle());
+			PlayAnimationForCurrentState ();
+		}
+
 	}
 
 	public void WatchMainScreen()
@@ -228,9 +291,12 @@ public class UIManager : MonoBehaviour {
 	}
 	public void VideoFinishCallBack()
 	{
-		if(!firstTimePlayIntro) {
+		if(!firstTimePlayIntro) 
+		{
 			SwitchState (ControllerState.idle);
-		} else {
+		}
+		else 
+		{
 			SwitchState (ControllerState.backToIdle);
 		}
 		OnIdleClicked ();
@@ -241,9 +307,11 @@ public class UIManager : MonoBehaviour {
 		midBlack.GetComponent<Animator> ().SetBool ("watchMain",false);
 		midBlack.SetActive (false);
 		midBtn.GetComponent<Animator> ().SetTrigger ("backToIdle");
+	
 	}
 	public void SwitchState(ControllerState a)
 	{
+		TimeKeeper.Instance.UseTimeKeeper (false);
 		state = a;
 	}
 
