@@ -296,7 +296,7 @@ public class UIManager : MonoBehaviour {
 			midBlack.SetActive (false);
 			StartCoroutine(_hideEveryThingToIdle());
 			PlayAnimationForCurrentState (false);
-			ControllerManager.Instance.PlayVideo(7);
+			ControllerManager.Instance.PlayVideo(0);
 			Debug.LogError("is playing vide 77777");
 		}
 
