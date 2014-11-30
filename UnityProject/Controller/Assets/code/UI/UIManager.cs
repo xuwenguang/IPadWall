@@ -134,8 +134,8 @@ public class UIManager : MonoBehaviour {
 		//hide text for category
 		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
 		WatchMainScreen ();
-		yield return new WaitForSeconds (5f);
-		VideoFinishCallBack ();
+//		yield return new WaitForSeconds (5f);
+//		VideoFinishCallBack ();
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
 
