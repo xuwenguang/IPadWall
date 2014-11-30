@@ -35,5 +35,10 @@ public class VideoControl : MonoBehaviour {
 			Debug.Log ("Client: Remove client");
 		}
 	}
+	
+	[RPC]
+	void BackToIdle () {
+		Debug.Log ("BackToIdle");
+	}
 
 }

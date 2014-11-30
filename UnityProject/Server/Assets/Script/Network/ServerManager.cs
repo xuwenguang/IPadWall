@@ -15,6 +15,7 @@ using System;
 public class ServerManager : MonoBehaviour {
 	public	static	ServerManager		Instance;
 	public	static	Dictionary<string, GameObject>	clients = new Dictionary<string, GameObject>();
+	public	static	int					loopCount = 0;
 
 	//Videos control: 
 	public	static	int					videoIndex;
@@ -55,7 +56,7 @@ public class ServerManager : MonoBehaviour {
 	}
 
 	int CheckNextVideoIndex (int index) {
-		if(index == 0 || index == 7) {
+		if(index == 0) {
 			//after idle || please lood at controller
 			return index;
 		} else if (index == 1) {
@@ -69,6 +70,15 @@ public class ServerManager : MonoBehaviour {
 		} else if (index == 6) {
 			//after thanks video
 			return 0;
+		} else if (index == 7) {
+			loopCount += 1;
+			if(loopCount == 5) {
+				loopCount = 0;
+				networkView.RPC("BackToIdle", RPCMode.Others);
+				return 0;
+			} else {
+				return index;
+			}
 		}
 		return 0;
 	}
