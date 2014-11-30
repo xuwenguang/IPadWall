@@ -55,6 +55,7 @@ public class UIManager : MonoBehaviour {
 		}
 		if(isIntroPlaying)
 		{
+			isIntroPlaying=false;
 			SwitchState(ControllerState.idleClicked);
 			PlayAnimationForCurrentState();
 		}
@@ -129,7 +130,7 @@ public class UIManager : MonoBehaviour {
 		//hide text for category
 		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
 		WatchMainScreen ();
-//		yield return new WaitForSeconds (3f);
+//		yield return new WaitForSeconds (5f);
 //		VideoFinishCallBack ();
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
@@ -227,8 +228,10 @@ public class UIManager : MonoBehaviour {
 			ControllerManager.Instance.PlayVideo(0);
 			break;
 		case ControllerState.idleClicked:
-			//play waiting for selection animation
 
+			TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
+			//play waiting for selection animation
+			StopAllCoroutines();
 			midBlack.GetComponent<Animator> ().SetBool ("watchMain",false);
 			midBlack.SetActive (false);
 			midBtn.GetComponent<Animator>().SetTrigger("resetMidCat");
@@ -260,6 +263,7 @@ public class UIManager : MonoBehaviour {
 			//after category animation finished, play let user look at screen animation
 			break;
 		case ControllerState.backToIdle:
+			TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
 
 			//play idle animation
 			PlayIdleAnimation();

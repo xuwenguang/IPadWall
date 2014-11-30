@@ -63,7 +63,7 @@ public class ControllerManager : MonoBehaviour {
 			case 1:
 				//PlayVideo(7);
 				TimeKeeper.Instance.UseTimeKeeper(true);
-				UIManager.Instance.isIntroPlaying=false;
+
 				break;
 			case 2:
 				UIManager.Instance.VideoFinishCallBack();
