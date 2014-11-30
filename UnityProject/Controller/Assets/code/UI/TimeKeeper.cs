@@ -8,8 +8,8 @@ public class TimeKeeper : MonoBehaviour {
 	[HideInInspector]
 	public float lastClickTime;
 
-	[HideInInspector]
-	public static bool useTimeKeeper=false;
+	//[HideInInspector]
+	public /*static*/ bool useTimeKeeper=false;
 	public static TimeKeeper Instance;
 
 	void Awake()
@@ -26,7 +26,7 @@ public class TimeKeeper : MonoBehaviour {
 	void Start()
 	{
 		lastClickTime = Time.time;
-		InvokeRepeating ("timeInvok",0f,5f);
+		InvokeRepeating ("timeInvok",0f,1f);
 	}
 	
 	public void _resetTime()

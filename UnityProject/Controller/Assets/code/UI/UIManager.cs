@@ -37,10 +37,11 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public enum ControllerState {idle, idleClicked,selected,waiting, backToIdle};
-	private ControllerState state=ControllerState.idle;
+	public ControllerState state=ControllerState.idle;
 
-	public void OnIdleClicked()
+	public void OnIdleClicked(bool clickedBtn=false)
 	{
+		midBtnClicked = clickedBtn;
 		if(state==ControllerState.idle)
 		{
 			//play animation for 4 button btns and the black bar
@@ -53,8 +54,10 @@ public class UIManager : MonoBehaviour {
 			SwitchState (ControllerState.backToIdle);
 			PlayAnimationForCurrentState();
 		}
-		if(isIntroPlaying)
+		else if(isIntroPlaying && state==ControllerState.idleClicked)
 		{
+			Debug.Log("should skip intro and play idle here");
+			ControllerManager.Instance.PlayVideo(0);
 			isIntroPlaying=false;
 			SwitchState(ControllerState.idleClicked);
 			PlayAnimationForCurrentState();
@@ -131,8 +134,8 @@ public class UIManager : MonoBehaviour {
 		//hide text for category
 		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
 		WatchMainScreen ();
-//		yield return new WaitForSeconds (5f);
-//		VideoFinishCallBack ();
+		yield return new WaitForSeconds (5f);
+		VideoFinishCallBack ();
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
 
@@ -211,10 +214,10 @@ public class UIManager : MonoBehaviour {
 		categoryText.GetComponent<Animator>().SetTrigger("show");
 	}
 
-
+	private bool midBtnClicked=false;
 	public bool firstTimePlayIntro=true;
 	public bool isIntroPlaying=false;
-	public void PlayAnimationForCurrentState()
+	public void PlayAnimationForCurrentState(bool controlVideo=true)
 	{
 		midBtn.GetComponent<Animator> ().ResetTrigger ("backToIdle");
 		midBtn.GetComponent<Animator> ().ResetTrigger ("resetMidCat");
@@ -225,12 +228,19 @@ public class UIManager : MonoBehaviour {
 			PlayIdleAnimation();
 			tapToStartText.SetActive(true);
 			TimeKeeper.Instance.UseTimeKeeper(false);
-			
-			ControllerManager.Instance.PlayVideo(0);
+
+			//not control video is for sometimes ui side just want to update controller animation, but do not want to affect server side videos
+			if(controlVideo)
+			{
+				ControllerManager.Instance.PlayVideo(0);
+			}
 			break;
 		case ControllerState.idleClicked:
-
-			TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
+			if(!midBtnClicked)
+			{
+	//			TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
+				midBtnClicked=false;
+			}
 			//play waiting for selection animation
 			StopAllCoroutines();
 			midBlack.GetComponent<Animator> ().SetBool ("watchMain",false);
@@ -243,9 +253,10 @@ public class UIManager : MonoBehaviour {
 
 			if(firstTimePlayIntro)
 			{
+				TimeKeeper.Instance.UseTimeKeeper(false);
 				ControllerManager.Instance.PlayVideo(1);
 				firstTimePlayIntro=false;
-				TimeKeeper.Instance.UseTimeKeeper(false);
+				Debug.LogError("useTimeKeeper: "+TimeKeeper.Instance.useTimeKeeper);
 				isIntroPlaying=true;
 			}
 //			else
@@ -264,7 +275,7 @@ public class UIManager : MonoBehaviour {
 			//after category animation finished, play let user look at screen animation
 			break;
 		case ControllerState.backToIdle:
-			TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
+			//TimeKeeper.Instance.UseTimeKeeper(true);/////23232323232323232323232323232323
 
 			//play idle animation
 			PlayIdleAnimation();
@@ -284,7 +295,7 @@ public class UIManager : MonoBehaviour {
 			tapToStartText.SetActive (true);
 			midBlack.SetActive (false);
 			StartCoroutine(_hideEveryThingToIdle());
-			PlayAnimationForCurrentState ();
+			PlayAnimationForCurrentState (false);
 			ControllerManager.Instance.PlayVideo(7);
 			Debug.LogError("is playing vide 77777");
 		}
