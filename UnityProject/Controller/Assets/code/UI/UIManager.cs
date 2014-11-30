@@ -58,6 +58,7 @@ public class UIManager : MonoBehaviour {
 			isIntroPlaying=false;
 			SwitchState(ControllerState.idleClicked);
 			PlayAnimationForCurrentState();
+
 		}
 	}
 
@@ -284,6 +285,8 @@ public class UIManager : MonoBehaviour {
 			midBlack.SetActive (false);
 			StartCoroutine(_hideEveryThingToIdle());
 			PlayAnimationForCurrentState ();
+			ControllerManager.Instance.PlayVideo(7);
+			Debug.LogError("is playing vide 77777");
 		}
 
 	}
