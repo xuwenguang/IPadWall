@@ -33,6 +33,7 @@ public class VideoControl : MonoBehaviour {
 	[RPC]
 	void BackToIdle () {
 		Debug.Log ("BackToIdle");
+		UIManager.Instance.LongTimeNoInteraction ();
 	}
 
 }
