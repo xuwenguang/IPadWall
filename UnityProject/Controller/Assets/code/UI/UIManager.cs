@@ -46,7 +46,15 @@ public class UIManager : MonoBehaviour {
 		{
 			//play animation for 4 button btns and the black bar
 			SwitchState (ControllerState.idleClicked);
-			PlayAnimationForCurrentState();
+			if(!clickedBtn)
+			{
+				PlayAnimationForCurrentState(false);
+			}
+			else
+			{
+				PlayAnimationForCurrentState();
+
+			}
 
 		} 
 		else if (state == ControllerState.backToIdle) 
