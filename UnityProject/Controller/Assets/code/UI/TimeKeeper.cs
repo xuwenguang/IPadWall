@@ -49,7 +49,7 @@ public class TimeKeeper : MonoBehaviour {
 		if(Time.time-lastClickTime>=40 && useTimeKeeper)
 		{
 			Debug.Log("more than 45 seconds not clicked");
-			timeCallBack();
+//			timeCallBack();
 
 		}
 	}
