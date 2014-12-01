@@ -150,7 +150,7 @@ public class UIManager : MonoBehaviour {
 		yield return new WaitForSeconds (5f);
 
 //		VideoFinishCallBack ();
-		//ControllerManager.Instance.VideoChanged (6);
+		ControllerManager.Instance.VideoChanged (6);
 
 
 
@@ -329,21 +329,16 @@ public class UIManager : MonoBehaviour {
 	public void VideoFinishCallBack(bool fVideos=false)
 	{
 		fourVideos = fVideos;
-//		if(!firstTimePlayIntro) 
-//		{
-			SwitchState (ControllerState.idle);
-//		}
-		//else 
-		{
-			SwitchState (ControllerState.backToIdle);
-		}
 
+		SwitchState (ControllerState.backToIdle);
+
+		Debug.LogError ("thanks v finished 1"+isThanksVideoFinished);
 		if(isThanksVideoFinished)
 		{
-			SwitchState(ControllerState.idle);
 			isThanksVideoFinished=false;
+			SwitchState(ControllerState.backToIdle);
 		}
-
+		Debug.LogError ("thanks v finished 2"+isThanksVideoFinished);
 		if(fourVideos)
 		{
 			SwitchState(ControllerState.idle);
