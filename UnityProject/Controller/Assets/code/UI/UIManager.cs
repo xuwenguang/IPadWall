@@ -109,9 +109,10 @@ public class UIManager : MonoBehaviour {
 	}
 
 
-
+	bool buttonsAreShowing=false;
 	IEnumerator _hideButtomBtns()
 	{
+		buttonsAreShowing = false;
 		for(int i=0;i<4;i++)
 		{
 			btnList[i].GetComponent<Animator>().SetTrigger("btnBackward");
@@ -138,7 +139,9 @@ public class UIManager : MonoBehaviour {
 
 //		VideoFinishCallBack ();
 //		ControllerManager.Instance.VideoChanged (3);
-		//LongTimeNoInteraction ();
+
+
+
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
 
@@ -253,7 +256,7 @@ public class UIManager : MonoBehaviour {
 			tapToStartText.SetActive(false);
 			StartCoroutine(_onCenterBtnClicked());
 			StartCoroutine(_showBlackBar(0.3f));
-
+			buttonsAreShowing=true;
 			if(controlVideo)
 			{
 				TimeKeeper.Instance.UseTimeKeeper(false);
@@ -293,10 +296,14 @@ public class UIManager : MonoBehaviour {
 	{
 		if(state!=ControllerState.idle)
 		{
+			if(state==ControllerState.idleClicked)
+			{
+				StartCoroutine(_hideEveryThingToIdle());
+				
+			}
 			SwitchState (ControllerState.idle);
 			tapToStartText.SetActive (true);
 			midBlack.SetActive (false);
-			StartCoroutine(_hideEveryThingToIdle());
 			PlayAnimationForCurrentState (false);
 	//		ControllerManager.Instance.PlayVideo(0);
 			Debug.LogError("is playing vide 77777");

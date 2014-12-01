@@ -59,6 +59,7 @@ public class ControllerManager : MonoBehaviour {
 			switch(index)
 			{
 			case 0:
+
 				break;
 			case 1:
 				//PlayVideo(7);
