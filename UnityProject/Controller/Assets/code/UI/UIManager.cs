@@ -312,7 +312,7 @@ public class UIManager : MonoBehaviour {
 		midBlack.SetActive (true);
 		midBlack.GetComponent<Animator> ().SetBool ("watchMain",true);
 	}
-	public void VideoFinishCallBack()
+	public void VideoFinishCallBack(bool fourVideos=false)
 	{
 //		if(!firstTimePlayIntro) 
 //		{
@@ -322,6 +322,12 @@ public class UIManager : MonoBehaviour {
 		{
 			SwitchState (ControllerState.backToIdle);
 		}
+
+		if(fourVideos)
+		{
+			SwitchState(ControllerState.idle);
+		}
+		Debug.LogWarning ("current state: "+state.ToString());
 		OnIdleClicked ();
 	}
 

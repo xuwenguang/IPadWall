@@ -67,15 +67,15 @@ public class ControllerManager : MonoBehaviour {
 
 				break;
 			case 2:
-				UIManager.Instance.VideoFinishCallBack();
+				UIManager.Instance.VideoFinishCallBack(true);
 				TimeKeeper.Instance.UseTimeKeeper(true);
 				break;
 			case 3:
-				UIManager.Instance.VideoFinishCallBack();
+				UIManager.Instance.VideoFinishCallBack(true);
 				TimeKeeper.Instance.UseTimeKeeper(true);
 				break;
 			case 4:
-				UIManager.Instance.VideoFinishCallBack();
+				UIManager.Instance.VideoFinishCallBack(true);
 				TimeKeeper.Instance.UseTimeKeeper(true);
 				break;
 			case 5:
