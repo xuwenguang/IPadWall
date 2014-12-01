@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour {
 				PlayAnimationForCurrentState();
 
 			}
-			fourVideos=false;
+
 
 		} 
 		else if (state == ControllerState.backToIdle) 
@@ -73,6 +73,8 @@ public class UIManager : MonoBehaviour {
 //			PlayAnimationForCurrentState(false);
 
 		}
+
+		fourVideos=false;
 	}
 
 	IEnumerator _onCenterBtnClicked()
