@@ -292,7 +292,6 @@ public class UIManager : MonoBehaviour {
 	{
 		if(state!=ControllerState.idle)
 		{
-			Debug.Log ("calling 40 secs no touch event");
 			SwitchState (ControllerState.idle);
 			tapToStartText.SetActive (true);
 			midBlack.SetActive (false);
@@ -311,11 +310,11 @@ public class UIManager : MonoBehaviour {
 	}
 	public void VideoFinishCallBack()
 	{
-		if(!firstTimePlayIntro) 
-		{
+//		if(!firstTimePlayIntro) 
+//		{
 			SwitchState (ControllerState.idle);
-		}
-		else 
+//		}
+		//else 
 		{
 			SwitchState (ControllerState.backToIdle);
 		}
