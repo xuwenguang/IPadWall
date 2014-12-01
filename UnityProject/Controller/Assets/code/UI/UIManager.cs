@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour {
 			ControllerManager.Instance.PlayVideo(7);
 			isIntroPlaying=false;
 			SwitchState(ControllerState.idleClicked);
-			PlayAnimationForCurrentState();
+			PlayAnimationForCurrentState(false);
 
 		}
 	}
@@ -137,7 +137,7 @@ public class UIManager : MonoBehaviour {
 		yield return new WaitForSeconds (5f);
 
 //		VideoFinishCallBack ();
-		ControllerManager.Instance.VideoChanged (3);
+//		ControllerManager.Instance.VideoChanged (3);
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
 
@@ -253,14 +253,14 @@ public class UIManager : MonoBehaviour {
 			StartCoroutine(_onCenterBtnClicked());
 			StartCoroutine(_showBlackBar(0.3f));
 
-//			if(firstTimePlayIntro)
-//			{
+			if(controlVideo)
+			{
 				TimeKeeper.Instance.UseTimeKeeper(false);
 				ControllerManager.Instance.PlayVideo(1);
 //				firstTimePlayIntro=false;
 				Debug.LogError("useTimeKeeper: "+TimeKeeper.Instance.useTimeKeeper);
 				isIntroPlaying=true;
-//			}
+			}
 //			else
 //			{
 //				ControllerManager.Instance.PlayVideo(7);

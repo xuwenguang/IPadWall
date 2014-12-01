@@ -83,7 +83,7 @@ public class ControllerManager : MonoBehaviour {
 				break;
 			case 6:
 				//thanks is finished, next time can play intro video again
-				UIManager.Instance.firstTimePlayIntro=true;
+//				UIManager.Instance.firstTimePlayIntro=true;
 				UIManager.Instance.VideoFinishCallBack();
 				break;
 			}
