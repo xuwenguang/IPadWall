@@ -81,6 +81,7 @@ public class ControllerManager : MonoBehaviour {
 			case 5:
 				//[Nick Change]  
 				//PlayVideo(6);
+				UIManager.Instance.VideoFinishCallBack(true);
 				break;
 			case 6:
 				//thanks is finished, next time can play intro video again

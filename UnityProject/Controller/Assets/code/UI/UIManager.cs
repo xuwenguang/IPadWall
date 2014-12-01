@@ -39,6 +39,7 @@ public class UIManager : MonoBehaviour {
 	public enum ControllerState {idle, idleClicked,selected,waiting, backToIdle};
 	public ControllerState state=ControllerState.idle;
 
+	public bool fourVideos = false;
 	public void OnIdleClicked(bool clickedBtn=false)
 	{
 		midBtnClicked = clickedBtn;
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour {
 		{
 			//play animation for 4 button btns and the black bar
 			SwitchState (ControllerState.idleClicked);
-			if(!clickedBtn)
+			if(fourVideos)
 			{
 				PlayAnimationForCurrentState(false);
 			}
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour {
 				PlayAnimationForCurrentState();
 
 			}
+			fourVideos=false;
 
 		} 
 		else if (state == ControllerState.backToIdle) 
@@ -320,8 +322,9 @@ public class UIManager : MonoBehaviour {
 		midBlack.SetActive (true);
 		midBlack.GetComponent<Animator> ().SetBool ("watchMain",true);
 	}
-	public void VideoFinishCallBack(bool fourVideos=false)
+	public void VideoFinishCallBack(bool fVideos=false)
 	{
+		fourVideos = fVideos;
 //		if(!firstTimePlayIntro) 
 //		{
 			SwitchState (ControllerState.idle);
