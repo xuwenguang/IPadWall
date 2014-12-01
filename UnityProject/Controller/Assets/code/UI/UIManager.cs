@@ -155,12 +155,12 @@ public class UIManager : MonoBehaviour {
 
 	public void _onCategorySelected(string keyCode)
 	{
-		if(state==ControllerState.idleClicked)
-		{
+//		if(state==ControllerState.idleClicked)
+//		{
 			selectedCategory = keyCode;
 			SwitchState (ControllerState.selected);
 			PlayAnimationForCurrentState ();
-		}
+		//}
 	}
 
 	public void _onCategorySequenceFinished()
@@ -296,11 +296,7 @@ public class UIManager : MonoBehaviour {
 	{
 		if(state!=ControllerState.idle)
 		{
-			if(state==ControllerState.idleClicked)
-			{
-				StartCoroutine(_hideEveryThingToIdle());
-				
-			}
+			StartCoroutine(_hideEveryThingToIdle());
 			SwitchState (ControllerState.idle);
 			tapToStartText.SetActive (true);
 			midBlack.SetActive (false);
