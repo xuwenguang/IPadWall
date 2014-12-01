@@ -68,6 +68,7 @@ public class ControllerManager : MonoBehaviour {
 				break;
 			case 2:
 				UIManager.Instance.VideoFinishCallBack(true);
+
 				TimeKeeper.Instance.UseTimeKeeper(true);
 				break;
 			case 3:
@@ -87,6 +88,7 @@ public class ControllerManager : MonoBehaviour {
 				//thanks is finished, next time can play intro video again
 //				UIManager.Instance.firstTimePlayIntro=true;
 				UIManager.Instance.VideoFinishCallBack();
+				UIManager.Instance.isThanksVideoFinished=true;
 				break;
 			}
 

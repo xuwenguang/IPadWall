@@ -324,6 +324,8 @@ public class UIManager : MonoBehaviour {
 		midBlack.SetActive (true);
 		midBlack.GetComponent<Animator> ().SetBool ("watchMain",true);
 	}
+
+	public bool isThanksVideoFinished = false;
 	public void VideoFinishCallBack(bool fVideos=false)
 	{
 		fourVideos = fVideos;
@@ -334,6 +336,12 @@ public class UIManager : MonoBehaviour {
 		//else 
 		{
 			SwitchState (ControllerState.backToIdle);
+		}
+
+		if(isThanksVideoFinished)
+		{
+			SwitchState(ControllerState.idle);
+			isThanksVideoFinished=false;
 		}
 
 		if(fourVideos)
