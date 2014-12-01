@@ -217,7 +217,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	private bool midBtnClicked=false;
-	public bool firstTimePlayIntro=true;
+//	public bool firstTimePlayIntro=true;
 	public bool isIntroPlaying=false;
 	public void PlayAnimationForCurrentState(bool controlVideo=true)
 	{
@@ -253,14 +253,14 @@ public class UIManager : MonoBehaviour {
 			StartCoroutine(_onCenterBtnClicked());
 			StartCoroutine(_showBlackBar(0.3f));
 
-			if(firstTimePlayIntro)
-			{
+//			if(firstTimePlayIntro)
+//			{
 				TimeKeeper.Instance.UseTimeKeeper(false);
 				ControllerManager.Instance.PlayVideo(1);
-				firstTimePlayIntro=false;
+//				firstTimePlayIntro=false;
 				Debug.LogError("useTimeKeeper: "+TimeKeeper.Instance.useTimeKeeper);
 				isIntroPlaying=true;
-			}
+//			}
 //			else
 //			{
 //				ControllerManager.Instance.PlayVideo(7);
