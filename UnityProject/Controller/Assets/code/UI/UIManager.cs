@@ -138,6 +138,7 @@ public class UIManager : MonoBehaviour {
 
 //		VideoFinishCallBack ();
 //		ControllerManager.Instance.VideoChanged (3);
+		//LongTimeNoInteraction ();
 
 		GameObject.Find ("blackBar").GetComponent<Animator> ().ResetTrigger ("hideBlackBar");
 
