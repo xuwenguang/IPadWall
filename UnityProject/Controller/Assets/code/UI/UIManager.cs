@@ -150,7 +150,7 @@ public class UIManager : MonoBehaviour {
 		yield return new WaitForSeconds (5f);
 
 //		VideoFinishCallBack ();
-		ControllerManager.Instance.VideoChanged (6);
+//		ControllerManager.Instance.VideoChanged (6);
 
 
 
