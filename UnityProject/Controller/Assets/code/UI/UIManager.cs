@@ -59,8 +59,8 @@ public class UIManager : MonoBehaviour {
 			Debug.Log("should skip intro and play idle here");
 			ControllerManager.Instance.PlayVideo(7);
 			isIntroPlaying=false;
-			SwitchState(ControllerState.idleClicked);
-			PlayAnimationForCurrentState(false);
+//			SwitchState(ControllerState.idleClicked);
+//			PlayAnimationForCurrentState(false);
 
 		}
 	}
