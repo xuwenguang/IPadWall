@@ -3221,7 +3221,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3000
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -7168,6 +7168,7 @@ GameObject:
   - 65: {fileID: 1613798067}
   - 114: {fileID: 1613798066}
   - 114: {fileID: 1613798065}
+  - 114: {fileID: 1613798069}
   - 114: {fileID: 1613798068}
   m_Layer: 5
   m_Name: LostConnectionButton
@@ -7246,6 +7247,18 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1613798063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de71d850421724ef582121eda8b44406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1613798069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400244, guid: 15d6d62162b584ce6810599f2e52b618,
+    type: 2}
+  m_PrefabInternal: {fileID: 1500795287}
   m_GameObject: {fileID: 1613798063}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -8129,7 +8142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077253232
 Transform:
   m_ObjectHideFlags: 0
