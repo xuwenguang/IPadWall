@@ -26,7 +26,7 @@ public class TimeKeeper : MonoBehaviour {
 	void Start()
 	{
 		lastClickTime = Time.time;
-		InvokeRepeating ("timeInvok",0f,1f);
+		//InvokeRepeating ("timeInvok",0f,1f);
 	}
 	
 	public void _resetTime()
@@ -34,13 +34,13 @@ public class TimeKeeper : MonoBehaviour {
 		lastClickTime = Time.time;
 	}
 
-	void Update()
-	{
-		if (Input.GetButton("Fire1") && useTimeKeeper)
-		{
-			_resetTime();
-		}
-	}
+//	void Update()
+//	{
+//		if (Input.GetButton("Fire1") && useTimeKeeper)
+//		{
+//			_resetTime();
+//		}
+//	}
 
 
 	public void timeInvok()
