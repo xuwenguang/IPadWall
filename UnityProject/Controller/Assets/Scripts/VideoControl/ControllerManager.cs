@@ -48,6 +48,7 @@ public class ControllerManager : MonoBehaviour {
 	
 	public void PlayVideo (int videoIndex) {
 		//play video
+		AnalyticEvent.LogInteractTime ();
 		networkView.RPC("ChangeVideo", RPCMode.Others, videoIndex, "-1");
 		Debug.Log("Play video: " + videoIndex);
 	}
