@@ -147,10 +147,11 @@ public class UIManager : MonoBehaviour {
 		//hide text for category
 		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
 		WatchMainScreen ();
-//		yield return new WaitForSeconds (5f);
+		yield return new WaitForSeconds (5f);
 
 //		VideoFinishCallBack ();
 //		ControllerManager.Instance.VideoChanged (6);
+		ControllerManager.Instance.VideoChanged (5);
 
 
 
