@@ -84,7 +84,7 @@ public class ControllerManager : MonoBehaviour {
 				//[Nick Change]  
 				//PlayVideo(6);
 				//UIManager.Instance.VideoFinishCallBack(true);
-				UIManager.Instance.VideoFinishCallBack(true);
+				UIManager.Instance.VideoFinishCallBack();
 				UIManager.Instance.isThanksVideoFinished=true;
 				break;
 			case 6:
