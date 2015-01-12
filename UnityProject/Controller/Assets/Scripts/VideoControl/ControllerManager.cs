@@ -54,6 +54,8 @@ public class ControllerManager : MonoBehaviour {
 	}
 	
 	public void VideoChanged (int index) {
+
+		Debug.Log ("video changed: "+index);
 		if(Time.time - _changeVideoLastTime > _changeVideoCooldownTime) {
 			//TODO: 
 			//wenguang: Hide label

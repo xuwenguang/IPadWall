@@ -147,10 +147,10 @@ public class UIManager : MonoBehaviour {
 		//hide text for category
 		categoryText.GetComponent<Animator> ().SetTrigger ("reset");
 		WatchMainScreen ();
-		//yield return new WaitForSeconds (5f);
+//		yield return new WaitForSeconds (5f);
 
 //		VideoFinishCallBack ();
-		//ControllerManager.Instance.VideoChanged (5);
+//		ControllerManager.Instance.VideoChanged (5);
 
 
 
@@ -274,7 +274,7 @@ public class UIManager : MonoBehaviour {
 				TimeKeeper.Instance.UseTimeKeeper(false);
 				ControllerManager.Instance.PlayVideo(1);
 //				firstTimePlayIntro=false;
-				Debug.LogError("useTimeKeeper: "+TimeKeeper.Instance.useTimeKeeper);
+//				Debug.LogError("useTimeKeeper: "+TimeKeeper.Instance.useTimeKeeper);
 				isIntroPlaying=true;
 			}
 //			else
@@ -332,13 +332,13 @@ public class UIManager : MonoBehaviour {
 
 		SwitchState (ControllerState.backToIdle);
 
-		Debug.LogError ("thanks v finished 1"+isThanksVideoFinished);
+//		Debug.LogError ("thanks v finished 1"+isThanksVideoFinished);
 		if(isThanksVideoFinished)
 		{
 			isThanksVideoFinished=false;
 			SwitchState(ControllerState.backToIdle);
 		}
-		Debug.LogError ("thanks v finished 2"+isThanksVideoFinished);
+//		Debug.LogError ("thanks v finished 2"+isThanksVideoFinished);
 		if(fourVideos)
 		{
 			SwitchState(ControllerState.idle);
