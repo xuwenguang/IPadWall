@@ -51,6 +51,7 @@ public class ClientManager : MonoBehaviour {
 		audio.Stop();
 		VideoTexture videoTextureScript = videoPlane.GetComponent<VideoTexture>();
 		videoTextureScript.jumpToVideo((videoIndex * 5 + groupID) * 2);
+		videoTextureScript.VideoTime = 0.0f;
 		_curVideo = videoIndex;
 		if(groupID == 4 && audioClips[videoIndex] != null) {
 			audio.clip = audioClips[videoIndex];

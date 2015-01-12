@@ -23,6 +23,10 @@ public class ServerSetup : MonoBehaviour {
 		UpdateClient(id, true);
 		if(isFirstTime) {
 			ServerManager.Instance.PlayVideo(0);
+		} else {
+			if(Time.time - ServerManager.Instance.lastTimeChangeVideo < ServerManager.Instance.reconnectVideoCooldownTime) {
+				ServerManager.Instance.PlayVideo(ServerManager.lastPlayedVideo, id);
+			}
 		}
 	}
 

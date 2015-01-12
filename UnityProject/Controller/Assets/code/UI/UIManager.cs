@@ -187,7 +187,7 @@ public class UIManager : MonoBehaviour {
 	{
 		if(state==ControllerState.waiting)
 		{
-			Debug.LogError("wrong place");
+//			Debug.LogError("wrong place");
 			SwitchState (ControllerState.idle);
 			PlayAnimationForCurrentState();
 		}
@@ -314,7 +314,7 @@ public class UIManager : MonoBehaviour {
 			midBlack.SetActive (false);
 			PlayAnimationForCurrentState (false);
 	//		ControllerManager.Instance.PlayVideo(0);
-			Debug.LogError("is playing vide 77777");
+//			Debug.LogError("is playing vide 77777");
 		}
 
 	}

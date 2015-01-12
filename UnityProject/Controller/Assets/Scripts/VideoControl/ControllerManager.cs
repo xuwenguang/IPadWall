@@ -94,7 +94,7 @@ public class ControllerManager : MonoBehaviour {
 //				UIManager.Instance.firstTimePlayIntro=true;
 				UIManager.Instance.VideoFinishCallBack();
 				UIManager.Instance.isThanksVideoFinished=true;
-				Debug.LogError("finished playing thanks video");
+//				Debug.LogError("finished playing thanks video");
 				break;
 			}
 

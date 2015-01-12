@@ -16,12 +16,15 @@ public class ServerManager : MonoBehaviour {
 	public	static	ServerManager		Instance;
 	public	static	Dictionary<string, GameObject>	clients = new Dictionary<string, GameObject>();
 	public	static	int					loopCount = 0;
+	public	static	int					lastPlayedVideo = 0;
+	public	float						reconnectVideoCooldownTime = 1.5f;
+	public	float						lastTimeChangeVideo;
 
 	//Videos control: 
 	public	static	int					videoIndex;
 	[SerializeField]
-	private	float						_changeVideoCooldownTime = 2.0f;
-	private	float						_changeVideoLastTime;
+	private	float						_videoChangedCooldownTime = 2.0f;
+	private	float						_lastTimeVideoChanged;
 	
 	void Awake()
 	{
@@ -37,9 +40,9 @@ public class ServerManager : MonoBehaviour {
 		}
 	}
 
-	public void PlayVideo (int index) {
+	public void PlayVideo (int index, string id = "-1") {
 		videoIndex = index;
-		networkView.RPC("ChangeVideo", RPCMode.Others, index, "-1");
+		networkView.RPC("ChangeVideo", RPCMode.Others, index, id);
 //		clients = GameObject.FindGameObjectsWithTag("Client");
 //		for (int i = 0; i < clients.Length; i++) {
 //			clients[i].SendMessage("ControlVideos", videosName[videoIndex]);
@@ -48,10 +51,10 @@ public class ServerManager : MonoBehaviour {
 	}
 
 	public void VideoChanged (int index) {
-		if(Time.time - _changeVideoLastTime > _changeVideoCooldownTime) {
+		if(Time.time - _lastTimeVideoChanged > _videoChangedCooldownTime) {
 			index = CheckNextVideoIndex(index);
 			PlayVideo(index);
-			_changeVideoLastTime = Time.time;
+			_lastTimeVideoChanged = Time.time;
 		}
 	}
 
@@ -63,12 +66,10 @@ public class ServerManager : MonoBehaviour {
 			//after intro
 			return 7;
 		} else if (index == 2 || index == 3 || index == 4) {
-			//after 4 main video
+			//after first 3 main video
 			return 7;
-		} else if (index == 5) {
-			return 6;
-		} else if (index == 6) {
-			//after thanks video
+		}else if (index == 5) {
+			//after inno video
 			return 0;
 		} else if (index == 7) {
 			loopCount += 1;

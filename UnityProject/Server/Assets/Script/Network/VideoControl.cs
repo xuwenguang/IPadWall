@@ -16,7 +16,8 @@ public class VideoControl : MonoBehaviour {
 
 	[RPC]
 	void ChangeVideo (int index, string id) {
-
+		ServerManager.lastPlayedVideo = index;
+		ServerManager.Instance.lastTimeChangeVideo = Time.time;
 	}
 
 	[RPC]

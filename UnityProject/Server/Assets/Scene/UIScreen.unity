@@ -4763,7 +4763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5738606e43862458c8fbd840cdb09ea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeVideoCooldownTime: 2
+  reconnectVideoCooldownTime: 1.5
+  lastTimeChangeVideo: 0
+  _videoChangedCooldownTime: 2
 --- !u!148 &1366474752
 NetworkView:
   m_ObjectHideFlags: 0

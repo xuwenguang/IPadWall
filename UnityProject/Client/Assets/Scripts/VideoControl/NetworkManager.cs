@@ -29,6 +29,7 @@ public class NetworkManager : MonoBehaviour {
 	void AddtoServer () {
 		networkView.RPC("AddClient", RPCMode.Server, ClientManager.clientID, ClientManager.isFirstTime);
 		if(ClientManager.isFirstTime) {
+//			videoTextureScript.IsPaused = false;
 			ClientManager.isFirstTime = false;
 		}
 	}
@@ -45,8 +46,12 @@ public class NetworkManager : MonoBehaviour {
 
 		ClientManager.Instance.lostConnectionButton.SetActive(true);
 
-		//TODO:
-		InvokeRepeating("Reconnect", 1f, 2f);
+		//pause the video
+//		VideoTexture videoTextureScript = ClientManager.Instance.videoPlane.GetComponent<VideoTexture>();
+//		videoTextureScript.IsPaused = true;
+
+		//Reconnect:
+		InvokeRepeating("Reconnect", 0f, 1.5f);
 		//networkView.RPC("RemoveClient", RPCMode.Server, ClientManager.clientID);
 		
 		//ConnectToServer();
